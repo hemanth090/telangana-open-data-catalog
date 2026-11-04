@@ -1,0 +1,6 @@
+node_modules/
+artifacts/
+artifacts-*/
+state/
+*.log
+.DS_Store
