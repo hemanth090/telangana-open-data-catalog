@@ -154,8 +154,6 @@ def main():
     readme = README.read_text()
     dash_paths = [
         README,
-        ROOT / "docs/superpowers/specs/2026-11-13-universal-skill-packaging-design.md",
-        ROOT / "docs/superpowers/plans/2026-11-13-universal-skill-packaging.md",
         SKILL,
         *sorted(REFS.glob("*.md")),
     ]

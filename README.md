@@ -1,4 +1,4 @@
-<img src="assets/banner.svg" alt="Telangana Open Data: a citation-friendly catalog for agents, researchers, and builders" width="100%">
+<img src="assets/banner.svg" alt="Telangana Open Data: a citation-ready catalog and theme ledger of 364 datasets" width="100%">
 
 # Telangana Open Data Skill
 
@@ -116,7 +116,7 @@ but a single question does not have to pay for all of it.
 
 ```text
 .
-├── assets/banner.svg         # ASCII mesh banner (Geist)
+├── assets/banner.svg         # Theme Ledger banner
 ├── skills/telangana-open-data/
 │   ├── SKILL.md              # index: 364 datasets, theme, size, license, link
 │   └── references/           # 106 theme files with resources and columns
