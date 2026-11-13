@@ -1,0 +1,15 @@
+{
+  "name": "hemanth090",
+  "description": "Agent skills by Hemanth.",
+  "owner": {
+    "name": "Hemanth"
+  },
+  "plugins": [
+    {
+      "name": "telangana-open-data",
+      "source": "./",
+      "description": "Dataset index and metadata for data.telangana.gov.in.",
+      "version": "1.0.0"
+    }
+  ]
+}

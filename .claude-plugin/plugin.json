@@ -1,0 +1,8 @@
+{
+  "name": "telangana-open-data",
+  "description": "Dataset index and metadata for data.telangana.gov.in.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hemanth"
+  }
+}
