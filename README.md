@@ -14,7 +14,15 @@ This repository is the generated skill: a dataset index, one file per theme, col
 npx skills add hemanth090/telangana-open-data-catalog -a '*' -g
 ```
 
-`-a '*'` installs to every agent the CLI detects. To target one agent:
+`-a '*'` installs to every agent in the CLI's registry, not only agents detected on your machine. To install only the agents listed below, pass their IDs explicitly:
+
+```bash
+npx skills add hemanth090/telangana-open-data-catalog -g -y \
+  -a claude-code codex cursor grok gemini-cli github-copilot opencode amp \
+     cline goose devin hermes-agent openclaw antigravity universal
+```
+
+For a single agent, use just that ID:
 
 ```bash
 npx skills add hemanth090/telangana-open-data-catalog -g -a opencode
