@@ -159,7 +159,7 @@ Dataset index. Load the theme file for columns and sources.
 | Kumuram Bheem Mandal Wise Crop Areas | Agriculture | 6 | 170067 | open | [skills/agriculture-agriculture-and-co-operation-13.md](references/agriculture-agriculture-and-co-operation-13.md) |
 | Telangana Rainfall Data 2007  | Agriculture | 2 | 380675 | non_commercial | [skills/agriculture-agriculture-and-co-operation-13.md](references/agriculture-agriculture-and-co-operation-13.md) |
 | Suryapet District Mandal Wise Crop Areas | Agriculture | 6 | 91864 | open | [skills/agriculture-agriculture-and-co-operation-13.md](references/agriculture-agriculture-and-co-operation-13.md) |
-| Telangana Irrigation & CAD Department – Daily Reservoir Storage Levels | Agriculture | 69 | 16528985 | open | [skills/agriculture-irrigation-and-cad-14.md](references/agriculture-irrigation-and-cad-14.md) |
+| Telangana Irrigation & CAD Department - Daily Reservoir Storage Levels | Agriculture | 69 | 16528985 | open | [skills/agriculture-irrigation-and-cad-14.md](references/agriculture-irrigation-and-cad-14.md) |
 | Telangana Windspeed Data 2020  | Agriculture | 4 | 7420395 | non_commercial | [skills/agriculture-irrigation-and-cad-14.md](references/agriculture-irrigation-and-cad-14.md) |
 | Day wise Rainfall Telangana 2004 to 2016  | Agriculture | 1 | 3912276 | unspecified | [skills/agriculture-irrigation-and-cad-14.md](references/agriculture-irrigation-and-cad-14.md) |
 | Siddipet District Mandal Wise Crop Areas | Agriculture | 6 | 71183 | open | [skills/agriculture-irrigation-and-cad-14.md](references/agriculture-irrigation-and-cad-14.md) |
@@ -315,7 +315,7 @@ Dataset index. Load the theme file for columns and sources.
 | Street Lighting in Urban Local Bodies, Telangana | Infrastructure | 1 | 1759 | unspecified | [skills/infrastructure-labour-and-employment-training-and-factories-3.md](references/infrastructure-labour-and-employment-training-and-factories-3.md) |
 | Sada Baimana Regularization | Infrastructure | 1 | 773 | unspecified | [skills/infrastructure-planning-4.md](references/infrastructure-planning-4.md) |
 | Data of Establishments registered under the Building and Other Construction Workers Act from 2017 to 2024 | Infrastructure | 96 | 1413762 | open | [skills/infrastructure-planning-4.md](references/infrastructure-planning-4.md) |
-| Telangana State Road Transport Corporation (TGSRTC) – General Transit Feed Specification (GTFS) Data | Infrastructure | 1 | 86684 | open | [skills/infrastructure-planning-4.md](references/infrastructure-planning-4.md) |
+| Telangana State Road Transport Corporation (TGSRTC) - General Transit Feed Specification (GTFS) Data | Infrastructure | 1 | 86684 | open | [skills/infrastructure-planning-4.md](references/infrastructure-planning-4.md) |
 | Classification of Roads | Infrastructure | 2 | 1945 | unspecified | [skills/infrastructure-planning-4.md](references/infrastructure-planning-4.md) |
 | Mission Kakatiya Phase 3 | Irrigation | 1 | 3900 | unspecified | [skills/irrigation-irrigation-and-cad.md](references/irrigation-irrigation-and-cad.md) |
 | Mission Kakatiya Phase 2 | Irrigation | 1 | 4073 | unspecified | [skills/irrigation-irrigation-and-cad.md](references/irrigation-irrigation-and-cad.md) |

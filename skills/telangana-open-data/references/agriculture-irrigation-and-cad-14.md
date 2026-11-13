@@ -8,7 +8,7 @@
 - Do not guess a column that is not listed.
 - Use LIMIT on exploratory queries.
 
-## Telangana Irrigation & CAD Department – Daily Reservoir Storage Levels
+## Telangana Irrigation & CAD Department - Daily Reservoir Storage Levels
 
 - Dataset: `9df04c5f-6558-4c4f-a802-d8b71faaa917`
 - Source: https://data.telangana.gov.in/sites/default/files/uploaded_resources/reservoir_details_2021-01.csv

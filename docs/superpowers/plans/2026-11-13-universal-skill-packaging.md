@@ -1,4 +1,4 @@
-# Telangana Open Data Universal Skill Packaging — Implementation Plan
+# Telangana Open Data Universal Skill Packaging: Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Skill name: `telangana-open-data`; directory must be `skills/telangana-open-data/`.
-- Frontmatter description must be 1–1,024 characters.
+- Frontmatter description must be 1-1,024 characters.
 - Preserve all 364 dataset rows and all 106 theme files.
 - Preserve every source URL, column list, byte size, and license label.
 - No npm package, no custom installer CLI, no MCP server.
@@ -22,11 +22,11 @@
 
 ## Review Focus
 
-1. **Broken/missing theme links** — every dataset row must point to an existing `references/*.md` file. Pinned by Task 1's link checker.
-2. **Duplicate skill discovery** — a root `SKILL.md` plus the nested one makes `npx skills` see two skills. Pinned by Task 1's `skills add . -l` check.
-3. **Name/directory mismatch** — Antigravity rejects `name` that does not match the parent directory. Pinned by Task 1's frontmatter check.
-4. **Invalid plugin manifests** — missing required fields break `claude plugin` / `agy plugin install`. Pinned by Tasks 2 and 3.
-5. **Wrong agent install matrix** — documented IDs or paths that do not exist. Pinned by Task 4's grep check and Task 5's temp-home install.
+1. **Broken/missing theme links:** every dataset row must point to an existing `references/*.md` file. Pinned by Task 1's link checker.
+2. **Duplicate skill discovery:** a root `SKILL.md` plus the nested one makes `npx skills` see two skills. Pinned by Task 1's `skills add . -l` check.
+3. **Name/directory mismatch:** Antigravity rejects `name` that does not match the parent directory. Pinned by Task 1's frontmatter check.
+4. **Invalid plugin manifests:** missing required fields break `claude plugin` / `agy plugin install`. Pinned by Tasks 2 and 3.
+5. **Wrong agent install matrix:** documented IDs or paths that do not exist. Pinned by Task 4's grep check and Task 5's temp-home install.
 
 ---
 

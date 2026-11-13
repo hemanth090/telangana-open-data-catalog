@@ -1,4 +1,4 @@
-# Telangana Open Data — Universal Skill Packaging
+# Telangana Open Data: Universal Skill Packaging
 
 Date: 2026-11-13
 Status: proposed (revised for all agents)

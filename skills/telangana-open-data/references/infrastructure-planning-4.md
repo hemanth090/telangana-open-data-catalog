@@ -129,7 +129,7 @@ Columns: `Districts` (1), `Applications Received` (1), `Survey Numbers Covered` 
 
 Columns: `district` (94), `mandal` (94), `village` (94), `establishment_name` (94), `employer_name` (94), `nature_of_business` (94), `total_employees` (94), `commencement_date` (94), `date_of_completion` (94), `applied_date` (94), `approved_date` (94), `status` (94)
 
-## Telangana State Road Transport Corporation (TGSRTC) – General Transit Feed Specification (GTFS) Data
+## Telangana State Road Transport Corporation (TGSRTC) - General Transit Feed Specification (GTFS) Data
 
 - Dataset: `bfd0ade2-3879-48da-89b3-1f546a86198c`
 - Source: https://data.telangana.gov.in/sites/default/files/uploaded_resources/TGSRTC_GTFS_open_data_terms_conditions.pdf

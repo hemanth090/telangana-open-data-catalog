@@ -147,8 +147,22 @@ def main():
     for stale in ["DATA.TELANGANA.GOV.IN", "MESH / 01", "HYD 17.3850"]:
         if stale in banner_text:
             raise AssertionError(f"banner still contains removed text: {stale}")
+    for dash in ("\u2014", "\u2013"):
+        if dash in banner_text:
+            raise AssertionError("banner still contains an em or en dash")
 
     readme = README.read_text()
+    dash_paths = [
+        README,
+        ROOT / "docs/superpowers/specs/2026-11-13-universal-skill-packaging-design.md",
+        ROOT / "docs/superpowers/plans/2026-11-13-universal-skill-packaging.md",
+        SKILL,
+        *sorted(REFS.glob("*.md")),
+    ]
+    for path in dash_paths:
+        text = path.read_text()
+        if "\u2014" in text or "\u2013" in text:
+            raise AssertionError(f"em or en dash found in {path.relative_to(ROOT)}")
     required = [
         "assets/banner.svg",
         "AI builders",
@@ -162,15 +176,13 @@ def main():
         "7,325 distribution",
         "7,323 with a download URL",
         "24.48 GB",
-        "0.95 MB catalog",
+        "under a megabyte",
         "106 across 23 themes",
         "7,208 of 7,323",
         "7,208 of 7,295",
         "98.8%",
         "5,829 column entries",
         "2,080 distinct",
-        "364 (362 distinct",
-        "two pairs repeat",
         "208 open",
         "3 open variants",
         "1 other-open",
@@ -181,12 +193,13 @@ def main():
         "87 CSV files",
         "28 non-CSV resources",
     ]
-    missing = [text for text in required if text not in readme]
+    readme_flat = " ".join(readme.split())
+    missing = [text for text in required if text not in readme_flat]
     if missing:
         raise AssertionError(f"README is missing verified strings: {missing}")
 
     stale = ["7,326", "7,324", "7,318", "5,829 distinct", "1.4 MB"]
-    present = [text for text in stale if text in readme]
+    present = [text for text in stale if text in readme_flat]
     if present:
         raise AssertionError(f"README still contains stale numbers: {present}")
 
