@@ -121,7 +121,7 @@ Keeping a root copy would make `npx skills` see two competing skills.
 ---
 name: telangana-open-data
 description: |
-  Dataset index for data.telangana.gov.in: 364 datasets and 7,326 resources
+  Dataset index for data.telangana.gov.in: 364 datasets and 7,325 resources
   from the Government of Telangana, with download URLs, CSV column names,
   formats, byte sizes, and license classes. Use when finding, citing,
   comparing, or planning analysis of Telangana open data across agriculture,
