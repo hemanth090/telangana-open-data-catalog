@@ -1,14 +1,14 @@
 # Telangana Open Data — Universal Skill Packaging
 
 Date: 2026-11-13
-Status: proposed
+Status: proposed (revised for all agents)
 Branch: `feat/universal-skill-packaging`
 
 ## Intent
 
 Package the existing generated Telangana Open Data catalog as one Agent Skill that
-installs and works in Claude Code, OpenCode, and Google Antigravity, with
-`npx skills` as the universal install path.
+installs and works across every agent shown in the Firecrawl launcher screenshot,
+using `npx skills` as the universal install path.
 
 The catalog content is already generated and correct. This work is packaging and
 discoverability only.
@@ -22,6 +22,37 @@ discoverability only.
 - No Claude or Antigravity plugin manifests.
 - No install instructions beyond "load `SKILL.md`".
 
+## Target agents
+
+From the screenshot, the coding agents that accept local skills are covered by
+`npx skills`:
+
+| Screenshot label | `--agent` ID | Project path | Global path |
+|---|---|---|---|
+| Claude Code | `claude-code` | `.claude/skills/` | `~/.claude/skills/` |
+| Codex | `codex` | `.agents/skills/` | `~/.agents/skills/` |
+| Cursor | `cursor` | `.agents/skills/` | `~/.cursor/skills/` |
+| Grok Build | `grok` | `.grok/skills/` | `~/.grok/skills/` |
+| Gemini CLI | `gemini-cli` | `.agents/skills/` | `~/.gemini/skills/` |
+| VS Code / Copilot | `github-copilot` | `.agents/skills/` | `~/.copilot/skills/` |
+| opencode | `opencode` | `.agents/skills/` | `~/.config/opencode/skills/` |
+| Amp | `amp` | `.agents/skills/` | `~/.config/agents/skills/` |
+| Cline | `cline` | `.agents/skills/` | `~/.agents/skills/` |
+| Goose | `goose` | `.goose/skills/` | `~/.config/goose/skills/` |
+| Devin | `devin` | `.devin/skills/` | `~/.config/devin/skills/` |
+| Hermes | `hermes-agent` | `.hermes/skills/` | `~/.hermes/skills/` |
+| OpenClaw | `openclaw` | `skills/` | `~/.openclaw/skills/` |
+| Antigravity | `antigravity` | `.agents/skills/` | `~/.gemini/config/skills/` |
+| Muse / Other | `universal` | `.agents/skills/` | `~/.config/agents/skills/` |
+
+Two exceptions are not local skill targets:
+
+- **ChatGPT** and **Claude web**: they use the Firecrawl connector/plugin, not a
+  local skill install. The same `SKILL.md` can be pasted into a project or
+  uploaded manually, but `npx skills` cannot install into the web app.
+- **Muse** has no dedicated `--agent` ID in `skills` 1.8.1; use `universal` or
+  copy into Muse's skill directory manually.
+
 ## Goals
 
 1. One canonical skill at `skills/telangana-open-data/SKILL.md` with valid
@@ -29,7 +60,7 @@ discoverability only.
 2. Theme files preserved as `references/*.md` beside the skill, keeping
    progressive disclosure: the index loads first, one theme file loads on demand.
 3. `npx skills add hemanth090/telangana-open-data-catalog` finds exactly one
-   skill and can install it to Claude Code, OpenCode, and Antigravity.
+   skill and can install it to every supported agent in the table above.
 4. Native plugin installs work:
    - Claude Code via `.claude-plugin/plugin.json` and `marketplace.json`.
    - Antigravity via `.antigravity-plugin/plugin.json`.
@@ -39,8 +70,8 @@ discoverability only.
 
 ## Non-goals
 
-- No npm package and no `npx telangana-open-data install` CLI (that was option B).
-- No MCP server (option C).
+- No npm package and no `npx telangana-open-data install` CLI.
+- No MCP server.
 - No changes to the catalog generator or dataset metadata.
 - No dataset downloads, rows, or cell values added to the repo.
 - No push to GitHub; the commit stays local until the owner pushes.
@@ -54,10 +85,9 @@ discoverability only.
 
 ## Chosen approach
 
-Option A: universal skill only. It is the smallest change that satisfies all
-four targets. `npx skills` already understands the OpenCode, Claude, and
-Antigravity install locations, and native plugin manifests cover marketplace
-installs without a custom installer.
+Option A: universal skill only. One Agent Skill directory is readable by every
+skill-capable agent, and `npx skills` handles the per-agent copy or symlink. This
+is the smallest change that satisfies every coding agent in the screenshot.
 
 Options B (npm installer) and C (MCP server) were considered and deferred.
 
@@ -68,7 +98,6 @@ Options B (npm installer) and C (MCP server) were considered and deferred.
 ├── README.md
 ├── DISCLAIMER.md
 ├── LICENSE
-├── plugin.json                         # optional generic agent-plugins manifest
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json
@@ -108,14 +137,13 @@ The body stays the existing index. The only body edit is rewriting links from
 
 | Target | Command |
 |---|---|
-| Universal (`npx skills`) | `npx skills add hemanth090/telangana-open-data-catalog` |
-| Universal, global | `npx skills add hemanth090/telangana-open-data-catalog -g` |
-| Claude Code | `/plugin marketplace add hemanth090/telangana-open-data-catalog` then `/plugin install telangana-open-data@hemanth090` |
-| OpenCode | `npx skills add hemanth090/telangana-open-data-catalog -g -a opencode` |
-| Antigravity | `agy plugin install https://github.com/hemanth090/telangana-open-data-catalog` |
+| All detected agents | `npx skills add hemanth090/telangana-open-data-catalog -a '*' -g` |
+| One agent | `npx skills add hemanth090/telangana-open-data-catalog -g -a opencode` |
+| Claude Code plugin | `/plugin marketplace add hemanth090/telangana-open-data-catalog` then `/plugin install telangana-open-data@hemanth090` |
+| Antigravity plugin | `agy plugin install https://github.com/hemanth090/telangana-open-data-catalog` |
 
-`npx skills` is the "universal npx" path. It installs the same skill directory
-into each agent's native location; no per-agent copies live in the repo.
+`-a '*'` installs to every agent the CLI detects or supports. `universal` covers
+clients without a dedicated ID, including Muse and "Other".
 
 ## Manifests
 
@@ -141,18 +169,16 @@ Antigravity schema (`https://antigravity.google/schemas/v1/plugin.json`), with
 author, homepage, repository, license, and keywords. No logo is required for a
 local install; it is only required for Marketplace submission.
 
-### `plugin.json` (optional)
-
-A generic agent-plugins.org manifest at the root, mirroring the same metadata,
-for clients that read that convention. It is additive and does not affect the
-three target agents. If it complicates validation, it is dropped.
-
 ## README changes
 
 Replace the "no install or code is required" paragraph with:
 
 - What the skill is.
-- Install commands for Claude, OpenCode, Antigravity, and universal npx.
+- A compact install table for all agents: Claude Code, Codex, Cursor, Grok Build,
+  Gemini CLI, VS Code/Copilot, OpenCode, Amp, Cline, Goose, Devin, Hermes,
+  OpenClaw, Antigravity, Muse/Other, plus the universal `-a '*'` command.
+- A note that ChatGPT and Claude web are connector/manual targets, not local
+  skill installs.
 - The target layout.
 - A short "use it" example: ask about a theme, open the linked reference file,
   cite source URL and license.
@@ -162,8 +188,8 @@ Replace the "no install or code is required" paragraph with:
 
 1. `npx skills add <local-path> -l` lists exactly one skill,
    `telangana-open-data`.
-2. `npx skills add <local-path> -g -a claude-code opencode antigravity -y`
-   installs into temporary home directories for all three agents.
+2. `npx skills add <local-path> -g -a '*' -y` installs into temporary homes for
+   every supported agent and creates the expected directories.
 3. Every link in `SKILL.md` resolves to a file under `references/`; every
    reference file is linked at least once.
 4. All JSON manifests parse, and `agy plugin validate --strict .` passes if
@@ -177,14 +203,15 @@ Replace the "no install or code is required" paragraph with:
   to choose a theme. It is still far smaller than loading all 1 MB of references.
 - Antigravity requires `name` to match the parent directory; both are
   `telangana-open-data`.
-- Claude plugin skill names are namespaced as `/telangana-open-data:...`; the
-  universal skill install exposes it directly as `telangana-open-data`.
+- Claude plugin skills are namespaced; the universal skill install exposes the
+  skill directly as `telangana-open-data`.
 - `npx skills` clones from GitHub, so remote installs only work after the owner
   pushes the branch. Local validation uses the working tree.
+- ChatGPT and Claude web cannot receive a local skill through `npx skills`.
 
 ## Open decisions already settled
 
 - Approach A, not B or C.
 - One skill, not 106.
-- Global install is documented but not performed on the owner's machine.
+- All coding agents in the screenshot, with `universal` as the fallback.
 - Changes stay on `feat/universal-skill-packaging` and are committed locally.
