@@ -1,0 +1,20 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "telangana-open-data",
+  "displayName": "Telangana Open Data",
+  "version": "1.0.0",
+  "description": "Dataset index and metadata for data.telangana.gov.in.",
+  "suggestedPrompts": [
+    "Find Telangana datasets about agriculture and list their columns.",
+    "Which Telangana open datasets cover district-wise health data?",
+    "Plan an analysis of Telangana municipal water supply data and cite the sources."
+  ],
+  "author": {
+    "name": "Hemanth",
+    "url": "https://github.com/hemanth090"
+  },
+  "homepage": "https://github.com/hemanth090/telangana-open-data-catalog",
+  "repository": "https://github.com/hemanth090/telangana-open-data-catalog",
+  "license": "Apache-2.0",
+  "keywords": ["telangana", "open-data", "datasets", "catalog", "government"]
+}
