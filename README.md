@@ -4,11 +4,58 @@ An agent skill for [data.telangana.gov.in](https://data.telangana.gov.in).
 
 The portal publishes 364 datasets as 7,326 distribution entries, 7,324 with a download URL, and 7,318 distinct URLs, totaling 24.48 GB. It has no working full-text search, no datastore, and no published column metadata.
 
-This repository is the generated skill: a dataset index, one file per theme, column names, byte sizes, source URLs, and license classes. Load `SKILL.md`; it links to every theme file under `skills/`. No install or code is required to use it.
+This repository is the generated skill: a dataset index, one file per theme, column names, byte sizes, source URLs, and license classes. It needs no runtime code.
+
+## Install
+
+### Any coding agent (universal)
+
+```bash
+npx skills add hemanth090/telangana-open-data-catalog -a '*' -g
+```
+
+`-a '*'` installs to every agent the CLI detects. To target one agent:
+
+```bash
+npx skills add hemanth090/telangana-open-data-catalog -g -a opencode
+```
+
+| Agent | `--agent` |
+|---|---|
+| Claude Code | `claude-code` |
+| Codex | `codex` |
+| Cursor | `cursor` |
+| Grok Build | `grok` |
+| Gemini CLI | `gemini-cli` |
+| VS Code / Copilot | `github-copilot` |
+| OpenCode | `opencode` |
+| Amp | `amp` |
+| Cline | `cline` |
+| Goose | `goose` |
+| Devin | `devin` |
+| Hermes | `hermes-agent` |
+| OpenClaw | `openclaw` |
+| Antigravity | `antigravity` |
+| Muse / Other | `universal` |
+
+### Claude Code plugin
+
+```text
+/plugin marketplace add hemanth090/telangana-open-data-catalog
+/plugin install telangana-open-data@hemanth090
+```
+
+### Antigravity plugin
+
+```bash
+agy plugin install https://github.com/hemanth090/telangana-open-data-catalog
+```
+
+ChatGPT and Claude web are connector or manual-upload targets, not local skill installs. Upload `skills/telangana-open-data/SKILL.md` with its `references/` folder if you need the catalog there.
 
 ## What it is for
 
-This is a context document for AI agents. Load `SKILL.md` into an agent and it can:
+This is a context document for AI agents. Load `skills/telangana-open-data/SKILL.md` into an agent and it can:
 
 - Find datasets by title, theme, or publisher.
 - Inspect column names and coverage before downloading anything.
@@ -22,8 +69,8 @@ It does not answer questions by itself. It tells the agent what data exists, whi
 
 | Path | What it is |
 |---|---|
-| `SKILL.md` | The index: 364 datasets, theme, resource count, bytes, license, and a link to the theme file. |
-| `skills/` | One file per theme with resources, columns, sources, and license. |
+| `skills/telangana-open-data/SKILL.md` | The index: 364 datasets, theme, resource count, bytes, license, and a link to the theme file. |
+| `skills/telangana-open-data/references/` | One file per theme with resources, columns, sources, and license. |
 
 Each theme file contains:
 
