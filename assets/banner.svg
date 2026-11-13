@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 340" role="img" aria-labelledby="bannerTitle bannerDesc">
+  <title id="bannerTitle">Telangana Open Data</title>
+  <desc id="bannerDesc">A citation-friendly catalog of 364 Telangana datasets for AI agents, researchers, and builders.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#042f2e"/>
+      <stop offset="0.52" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#ffffff" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="340" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="340" rx="28" fill="url(#grid)"/>
+  <circle cx="1120" cy="70" r="170" fill="#ffffff" opacity="0.045"/>
+  <circle cx="1210" cy="290" r="120" fill="#ffffff" opacity="0.05"/>
+
+  <text x="72" y="70" fill="#a7f3d0" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="700" letter-spacing="4">DATA.TELANGANA.GOV.IN</text>
+  <text x="72" y="154" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="64" font-weight="800">Telangana Open Data</text>
+  <text x="72" y="200" fill="#d1fae5" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="24">A citation-friendly catalog for agents, researchers, and builders.</text>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="600">
+    <rect x="72" y="242" width="150" height="44" rx="22" fill="#ffffff" opacity="0.12"/>
+    <text x="147" y="270" text-anchor="middle" fill="#ffffff">364 datasets</text>
+    <rect x="234" y="242" width="174" height="44" rx="22" fill="#ffffff" opacity="0.12"/>
+    <text x="321" y="270" text-anchor="middle" fill="#ffffff">106 theme files</text>
+    <rect x="420" y="242" width="148" height="44" rx="22" fill="#ffffff" opacity="0.12"/>
+    <text x="494" y="270" text-anchor="middle" fill="#ffffff">24.48 GB</text>
+    <rect x="580" y="242" width="138" height="44" rx="22" fill="#ffffff" opacity="0.12"/>
+    <text x="649" y="270" text-anchor="middle" fill="#ffffff">23 themes</text>
+  </g>
+
+  <g transform="translate(924 64)">
+    <rect width="284" height="212" rx="24" fill="#ffffff" opacity="0.09"/>
+    <text x="24" y="38" fill="#a7f3d0" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2.5">CATALOG</text>
+    <circle cx="248" cy="32" r="7" fill="#5eead4"/>
+
+    <rect x="24" y="56" width="236" height="38" rx="10" fill="#ffffff" opacity="0.11"/>
+    <circle cx="44" cy="75" r="6" fill="#5eead4"/>
+    <rect x="60" y="68" width="122" height="6" rx="3" fill="#ffffff" opacity="0.7"/>
+    <rect x="60" y="80" width="78" height="5" rx="2.5" fill="#ffffff" opacity="0.35"/>
+
+    <rect x="24" y="104" width="236" height="38" rx="10" fill="#ffffff" opacity="0.08"/>
+    <circle cx="44" cy="123" r="6" fill="#93c5fd"/>
+    <rect x="60" y="116" width="146" height="6" rx="3" fill="#ffffff" opacity="0.55"/>
+    <rect x="60" y="128" width="96" height="5" rx="2.5" fill="#ffffff" opacity="0.3"/>
+
+    <rect x="24" y="152" width="236" height="38" rx="10" fill="#ffffff" opacity="0.06"/>
+    <circle cx="44" cy="171" r="6" fill="#c4b5fd"/>
+    <rect x="60" y="164" width="106" height="6" rx="3" fill="#ffffff" opacity="0.45"/>
+    <rect x="60" y="176" width="64" height="5" rx="2.5" fill="#ffffff" opacity="0.25"/>
+
+    <path d="M24 198H260" stroke="url(#line)" stroke-width="2" opacity="0.5"/>
+  </g>
+</svg>

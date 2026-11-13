@@ -136,8 +136,20 @@ def main():
     if "7,326" in skill_text:
         raise AssertionError("SKILL.md still contains the stale 7,326 count")
 
+    banner = ROOT / "assets/banner.svg"
+    if not banner.is_file() or "<svg" not in banner.read_text():
+        raise AssertionError("assets/banner.svg is missing or not an SVG")
+
     readme = README.read_text()
     required = [
+        "assets/banner.svg",
+        "AI builders",
+        "Researchers",
+        "Founders",
+        "Fast prototypers",
+        "Analysts",
+        "How to cite",
+        "Contributing",
         "364 datasets",
         "7,325 distribution",
         "7,323 with a download URL",
