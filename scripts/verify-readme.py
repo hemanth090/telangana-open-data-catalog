@@ -139,6 +139,14 @@ def main():
     banner = ROOT / "assets/banner.svg"
     if not banner.is_file() or "<svg" not in banner.read_text():
         raise AssertionError("assets/banner.svg is missing or not an SVG")
+    banner_text = banner.read_text()
+    if "Geist" not in banner_text:
+        raise AssertionError("banner does not declare the Geist typeface")
+    if "Gradient" in banner_text or "gradient" in banner_text:
+        raise AssertionError("banner must stay non-gradient")
+    for stale in ["DATA.TELANGANA.GOV.IN", "MESH / 01", "HYD 17.3850"]:
+        if stale in banner_text:
+            raise AssertionError(f"banner still contains removed text: {stale}")
 
     readme = README.read_text()
     required = [

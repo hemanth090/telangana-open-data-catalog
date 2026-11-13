@@ -121,7 +121,7 @@ Every count above is reproducible from the committed index and theme files. Run
 
 ```text
 .
-├── assets/banner.svg         # README banner
+├── assets/banner.svg         # ASCII mesh banner (Geist)
 ├── skills/telangana-open-data/
 │   ├── SKILL.md              # index: 364 datasets, theme, size, license, link
 │   └── references/           # 106 theme files with resources and columns
