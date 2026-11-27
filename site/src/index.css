@@ -639,17 +639,21 @@ h1 {
     margin-top: 14px;
   }
 
+  h1 {
+    line-height: 1.1;
+  }
+
   .eyebrow {
-    margin-bottom: 8px;
+    display: none;
   }
 
   .intro {
-    margin-top: 14px;
+    margin-top: 26px;
     font-size: 0.9375rem;
   }
 
   .actions {
-    margin-top: 14px;
+    margin-top: 18px;
   }
 
   .works-with {
