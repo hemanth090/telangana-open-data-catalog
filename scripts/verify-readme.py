@@ -136,21 +136,6 @@ def main():
     if "7,326" in skill_text:
         raise AssertionError("SKILL.md still contains the stale 7,326 count")
 
-    banner = ROOT / "assets/banner.svg"
-    if not banner.is_file() or "<svg" not in banner.read_text():
-        raise AssertionError("assets/banner.svg is missing or not an SVG")
-    banner_text = banner.read_text()
-    if "Geist" not in banner_text:
-        raise AssertionError("banner does not declare the Geist typeface")
-    if "Gradient" in banner_text or "gradient" in banner_text:
-        raise AssertionError("banner must stay non-gradient")
-    for stale in ["DATA.TELANGANA.GOV.IN", "MESH / 01", "HYD 17.3850"]:
-        if stale in banner_text:
-            raise AssertionError(f"banner still contains removed text: {stale}")
-    for dash in ("\u2014", "\u2013"):
-        if dash in banner_text:
-            raise AssertionError("banner still contains an em or en dash")
-
     readme = README.read_text()
     dash_paths = [
         README,
@@ -162,7 +147,7 @@ def main():
         if "\u2014" in text or "\u2013" in text:
             raise AssertionError(f"em or en dash found in {path.relative_to(ROOT)}")
     required = [
-        "assets/banner.svg",
+        "assets/landing-page.webp",
         "AI builders",
         "Researchers",
         "Founders",

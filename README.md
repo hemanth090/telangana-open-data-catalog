@@ -1,12 +1,10 @@
-<img src="assets/banner.svg" alt="Telangana Open Data: a citation-ready catalog and theme ledger of 364 datasets" width="100%">
-
 # Telangana Open Data Skill
+
+[![Telangana Open Data landing page: the Charminar at golden hour behind the headline "Open data that your agent can actually use", with install and GitHub buttons](assets/landing-page.webp?v=3)](https://hemanth090.github.io/telangana-open-data-catalog/)
 
 > A local, citation-friendly guide to Telangana's open data, built for AI agents and the people who work with them.
 
-**Landing page:** [hemanth090.github.io/telangana-open-data-catalog](https://hemanth090.github.io/telangana-open-data-catalog/)
-
-[![Telangana Open Data landing page: the Charminar at golden hour behind the headline "Open data that your agent can actually use", with install and GitHub buttons](assets/landing-page.webp)](https://hemanth090.github.io/telangana-open-data-catalog/)
+**Live landing page:** [hemanth090.github.io/telangana-open-data-catalog](https://hemanth090.github.io/telangana-open-data-catalog/)
 
 [![Datasets](https://img.shields.io/badge/datasets-364-0f766e)](#at-a-glance)
 [![Theme files](https://img.shields.io/badge/theme_files-106-1d4ed8)](#at-a-glance)
@@ -120,7 +118,8 @@ but a single question does not have to pay for all of it.
 
 ```text
 .
-├── assets/banner.svg         # Theme Ledger banner
+├── assets/                   # landing page screenshot
+├── site/                     # landing page source (Vite + React, GitHub Pages)
 ├── skills/telangana-open-data/
 │   ├── SKILL.md              # index: 364 datasets, theme, size, license, link
 │   └── references/           # 106 theme files with resources and columns
