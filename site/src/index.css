@@ -28,11 +28,11 @@
     scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    overscroll-behavior-y: none;
   }
 
   body {
     min-width: 320px;
-    min-height: 100vh;
   }
 
   button,
