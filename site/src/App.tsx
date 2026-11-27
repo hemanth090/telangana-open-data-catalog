@@ -120,6 +120,7 @@ export default function App() {
   const [stars, setStars] = useState<number | null>(null)
   const [panel, setPanel] = useState<PanelId | null>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let active = true
@@ -141,8 +142,41 @@ export default function App() {
   useEffect(() => {
     if (!panel) return
 
+    const previouslyFocused = document.activeElement as HTMLElement | null
+    const panelEl = panelRef.current
+
+    const focusable = () =>
+      panelEl
+        ? Array.from(
+            panelEl.querySelectorAll<HTMLElement>(
+              'button, a[href], [tabindex]:not([tabindex="-1"])',
+            ),
+          )
+        : []
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setPanel(null)
+      if (event.key === 'Escape') {
+        setPanel(null)
+        return
+      }
+
+      if (event.key !== 'Tab' || !panelEl) return
+
+      const items = focusable()
+      if (items.length === 0) return
+
+      const first = items[0]
+      const last = items[items.length - 1]
+      const active = document.activeElement
+      const inside = panelEl.contains(active)
+
+      if (event.shiftKey && (!inside || active === first)) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && (!inside || active === last)) {
+        event.preventDefault()
+        first.focus()
+      }
     }
 
     const previousOverflow = document.body.style.overflow
@@ -153,6 +187,7 @@ export default function App() {
     return () => {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', onKeyDown)
+      previouslyFocused?.focus?.()
     }
   }, [panel])
 
@@ -291,6 +326,7 @@ export default function App() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="panel-heading"
+            ref={panelRef}
             onClick={(event) => event.stopPropagation()}
           >
             <button
