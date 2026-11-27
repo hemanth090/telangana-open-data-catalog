@@ -273,8 +273,8 @@ export default function App() {
         </h1>
 
         <p className="intro">
-          Search 364 Telangana datasets, inspect columns and licenses, and get
-          citation-ready source links, without scraping the portal.
+          Search 364 Telangana datasets, check the columns and licenses they
+          publish, and cite the source, without scraping the portal.
         </p>
 
         <div className="actions">

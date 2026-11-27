@@ -1,6 +1,6 @@
 # Telangana Open Data Skill
 
-[![Telangana Open Data landing page: the Charminar at golden hour behind the headline "Open data that your agent can actually use", with install and GitHub buttons](assets/landing-page.webp?v=3)](https://hemanth090.github.io/telangana-open-data-catalog/)
+[![Telangana Open Data landing page: the Charminar at golden hour behind the headline "Open data that your agent can actually use", with install and GitHub buttons](assets/landing-page.webp?v=4)](https://hemanth090.github.io/telangana-open-data-catalog/)
 
 > A local, citation-friendly guide to Telangana's open data, built for AI agents and the people who work with them.
 
