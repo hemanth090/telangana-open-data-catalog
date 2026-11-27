@@ -4,3 +4,4 @@ artifacts-*/
 state/
 *.log
 .DS_Store
+site/dist/

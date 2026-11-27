@@ -4,6 +4,8 @@
 
 > A local, citation-friendly guide to Telangana's open data, built for AI agents and the people who work with them.
 
+**Landing page:** [hemanth090.github.io/telangana-open-data-catalog](https://hemanth090.github.io/telangana-open-data-catalog/)
+
 [![Datasets](https://img.shields.io/badge/datasets-364-0f766e)](#at-a-glance)
 [![Theme files](https://img.shields.io/badge/theme_files-106-1d4ed8)](#at-a-glance)
 [![Indexed size](https://img.shields.io/badge/indexed_size-24.48_GB-7c3aed)](#at-a-glance)

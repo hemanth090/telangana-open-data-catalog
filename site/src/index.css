@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Inter Tight', sans-serif;
+  --ink: #ffffff;
+  --ink-soft: rgba(255, 255, 255, 0.82);
+  --accent: #ffffff;
+  --ivory: #fff3dd;
+  --espresso: #241512;
+  --espresso-ink: #fff6ea;
+
+  /* Type scale: every text size in the page comes from these steps. */
+  --text-micro: 12px;
+  --text-ui: 15px;
+  --text-body: 17px;
+  --text-display: clamp(46px, 5.5vw, 76px);
+
+  --radius-pill: 999px;
+
+  color: var(--ink);
+  background: #e7c18f;
+  font-synthesis: none;
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.landing {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: url('/telangana-charminar.webp') center center / cover no-repeat;
+}
+
+.nav-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(1420px, calc(100% - 88px));
+  min-height: 92px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand,
+.nav-github {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: var(--text-ui);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+}
+
+.nav-links button:hover {
+  opacity: 0.55;
+}
+
+.nav-links button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.brand {
+  width: max-content;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--text-ui);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.nav-github {
+  justify-self: end;
+  color: var(--ink);
+  font-size: var(--text-ui);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  gap: 9px;
+  transition: opacity 150ms ease;
+}
+
+.nav-github:hover {
+  opacity: 0.55;
+}
+
+.nav-github > svg {
+  width: 17px;
+  height: 17px;
+}
+
+.star-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  font-size: var(--text-micro);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.star-chip svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  width: min(860px, calc(100% - 40px));
+  margin: clamp(64px, 10vh, 116px) auto 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--text-micro);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.7;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 560px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.install-button,
+.github-button {
+  font-family: inherit;
+  font-size: var(--text-ui);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease,
+    background-color 160ms ease;
+}
+
+.install-button:hover,
+.github-button:hover {
+  transform: translateY(-2px);
+}
+
+.install-button:active,
+.github-button:active {
+  transform: translateY(0);
+}
+
+.install-button:focus-visible,
+.github-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 3px;
+}
+
+.install-button {
+  min-height: 46px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--espresso);
+  color: var(--espresso-ink);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(36, 21, 18, 0.28);
+}
+
+.install-button:hover {
+  background: #34201b;
+}
+
+.install-label {
+  display: inline-grid;
+  align-items: center;
+}
+
+.install-label > span {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+}
+
+.label-hidden {
+  visibility: hidden;
+}
+
+.install-button svg,
+.github-button svg {
+  width: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.github-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 248, 237, 0.86);
+  color: #2a1714;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(36, 21, 18, 0.14);
+}
+
+.github-button:hover {
+  background: #fff8ed;
+}
+
+.works-with {
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-micro);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.sector-strip {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 16px 0 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(26, 15, 12, 0.34);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+}
+
+.sector-track {
+  display: flex;
+  width: max-content;
+  animation: sector-scroll 46s linear infinite;
+}
+
+.sector-group {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  padding-right: 44px;
+}
+
+.sector {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--text-micro);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes sector-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.panel-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(24, 14, 12, 0.5);
+  backdrop-filter: blur(7px);
+  animation: panel-fade 180ms ease-out;
+}
+
+.panel {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: calc(100svh - 48px);
+  overflow: auto;
+  padding: 30px 32px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+  background: linear-gradient(
+    155deg,
+    rgba(255, 251, 244, 0.88) 0%,
+    rgba(255, 245, 232, 0.7) 100%
+  );
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  color: #2c1a14;
+  box-shadow:
+    0 26px 60px rgba(24, 14, 12, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  animation: panel-rise 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.panel-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.45);
+  color: #2c1a14;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 150ms ease;
+}
+
+.panel-close:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.panel-close:focus-visible {
+  outline: 2px solid #9a6a49;
+  outline-offset: 2px;
+}
+
+.panel-close svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.panel-label {
+  margin: 0 0 10px;
+  color: #9a6a49;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.panel-heading {
+  margin: 0 0 14px;
+  color: #2c1a14;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.panel-copy {
+  margin: 0 0 12px;
+  color: #55392c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.panel-copy:last-of-type {
+  margin-bottom: 0;
+}
+
+@keyframes panel-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-backdrop,
+  .panel,
+  .sector-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-wrap {
+    width: calc(100% - 40px);
+  }
+
+  .hero {
+    margin-top: clamp(54px, 9vh, 90px);
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .landing {
+    background-position: 53% center;
+  }
+
+  .nav-wrap {
+    min-height: 76px;
+  }
+
+  .hero {
+    margin-top: 64px;
+  }
+
+  :root {
+    --text-display: clamp(41px, 12vw, 56px);
+  }
+
+  .intro {
+    max-width: 410px;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .install-button {
+    padding: 0 16px;
+  }
+
+  .github-button {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-github .nav-label {
+    display: none;
+  }
+}
