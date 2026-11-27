@@ -6,6 +6,8 @@
 
 **Landing page:** [hemanth090.github.io/telangana-open-data-catalog](https://hemanth090.github.io/telangana-open-data-catalog/)
 
+[![Telangana Open Data landing page: the Charminar at golden hour behind the headline "Open data that your agent can actually use", with install and GitHub buttons](assets/landing-page.webp)](https://hemanth090.github.io/telangana-open-data-catalog/)
+
 [![Datasets](https://img.shields.io/badge/datasets-364-0f766e)](#at-a-glance)
 [![Theme files](https://img.shields.io/badge/theme_files-106-1d4ed8)](#at-a-glance)
 [![Indexed size](https://img.shields.io/badge/indexed_size-24.48_GB-7c3aed)](#at-a-glance)
